@@ -1,0 +1,17 @@
+# Dependências
+node_modules/
+
+# Build
+dist/
+
+# Editor
+.vscode/
+*.swp
+*.swo
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

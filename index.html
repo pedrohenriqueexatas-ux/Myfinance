@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="MyFinance - Sistema de Finanças Pessoais. Controle suas receitas e despesas de forma simples e organizada." />
+    <title>MyFinance - Finanças Pessoais</title>
+    <!-- Fonte Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- ============================================================ -->
+    <!-- NAVBAR - Barra de Navegação -->
+    <!-- ============================================================ -->
+    <nav class="navbar" id="navbar">
+      <div class="navbar-container">
+        <!-- Logo -->
+        <a href="#" class="navbar-logo">
+          <span class="logo-icone">💰</span>
+          <span class="logo-texto">MyFinance</span>
+        </a>
+
+        <!-- Botão Hamburger (menu mobile) -->
+        <button class="botao-menu" id="botao-menu" aria-label="Menu">
+          <span class="hamburger-linha"></span>
+          <span class="hamburger-linha"></span>
+          <span class="hamburger-linha"></span>
+        </button>
+
+        <!-- Links de Navegação -->
+        <ul class="nav-links" id="nav-links">
+          <li>
+            <a href="#" class="nav-link nav-link-ativo" data-secao="dashboard">
+              📊 Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link" data-secao="nova-transacao">
+              ➕ Nova Transação
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link" data-secao="historico">
+              📋 Histórico
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link" data-secao="resumo">
+              📈 Resumo
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link" data-secao="sobre">
+              ℹ️ Sobre
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ============================================================ -->
+    <!-- CONTEÚDO PRINCIPAL -->
+    <!-- ============================================================ -->
+    <main class="conteudo-principal">
+
+      <!-- ============================================================ -->
+      <!-- SEÇÃO: DASHBOARD -->
+      <!-- ============================================================ -->
+      <section id="dashboard" class="secao secao-ativa">
+        <div class="container">
+          <h1 class="secao-titulo">Dashboard</h1>
+          <p class="secao-subtitulo">Visão geral das suas finanças</p>
+
+          <!-- Cards de Resumo -->
+          <div class="cards-container">
+            <!-- Card Saldo -->
+            <div class="card card-saldo" id="card-saldo">
+              <div class="card-icone">💵</div>
+              <div class="card-info">
+                <h3 class="card-titulo">Saldo Atual</h3>
+                <p class="card-valor" id="valor-saldo">R$ 0,00</p>
+              </div>
+            </div>
+
+            <!-- Card Receitas -->
+            <div class="card card-receitas">
+              <div class="card-icone">📈</div>
+              <div class="card-info">
+                <h3 class="card-titulo">Total Receitas</h3>
+                <p class="card-valor" id="valor-receitas">R$ 0,00</p>
+              </div>
+            </div>
+
+            <!-- Card Despesas -->
+            <div class="card card-despesas">
+              <div class="card-icone">📉</div>
+              <div class="card-info">
+                <h3 class="card-titulo">Total Despesas</h3>
+                <p class="card-valor" id="valor-despesas">R$ 0,00</p>
+              </div>
+            </div>
+
+            <!-- Card Quantidade -->
+            <div class="card card-quantidade">
+              <div class="card-icone">📝</div>
+              <div class="card-info">
+                <h3 class="card-titulo">Lançamentos</h3>
+                <p class="card-valor" id="valor-quantidade">0</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botão de Ação Rápida -->
+          <div class="acao-rapida">
+            <button class="btn btn-primario btn-grande nav-link" data-secao="nova-transacao">
+              ➕ Adicionar Transação
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SEÇÃO: NOVA TRANSAÇÃO -->
+      <!-- ============================================================ -->
+      <section id="nova-transacao" class="secao">
+        <div class="container">
+          <h1 class="secao-titulo" id="titulo-formulario">Nova Transação</h1>
+          <p class="secao-subtitulo">Registre uma nova receita ou despesa</p>
+
+          <!-- Formulário -->
+          <div class="formulario-container">
+            <form id="form-transacao" class="formulario">
+              <!-- Campo Tipo -->
+              <div class="campo-grupo">
+                <label for="campo-tipo" class="campo-label">Tipo</label>
+                <select id="campo-tipo" class="campo-input" required>
+                  <option value="despesa">Despesa</option>
+                  <option value="receita">Receita</option>
+                </select>
+              </div>
+
+              <!-- Campo Descrição -->
+              <div class="campo-grupo">
+                <label for="campo-descricao" class="campo-label">Descrição</label>
+                <input
+                  type="text"
+                  id="campo-descricao"
+                  class="campo-input"
+                  placeholder="Ex: Conta de luz, Salário..."
+                  required
+                  maxlength="100"
+                />
+              </div>
+
+              <!-- Campo Valor -->
+              <div class="campo-grupo">
+                <label for="campo-valor" class="campo-label">Valor (R$)</label>
+                <input
+                  type="number"
+                  id="campo-valor"
+                  class="campo-input"
+                  placeholder="0,00"
+                  min="0.01"
+                  step="0.01"
+                  required
+                />
+              </div>
+
+              <!-- Campo Categoria -->
+              <div class="campo-grupo">
+                <label for="campo-categoria" class="campo-label">Categoria</label>
+                <select id="campo-categoria" class="campo-input" required>
+                  <option value="">Selecione uma categoria</option>
+                </select>
+              </div>
+
+              <!-- Campo Data -->
+              <div class="campo-grupo">
+                <label for="campo-data" class="campo-label">Data</label>
+                <input
+                  type="date"
+                  id="campo-data"
+                  class="campo-input"
+                  required
+                />
+              </div>
+
+              <!-- Botões -->
+              <div class="formulario-botoes">
+                <button type="submit" id="btn-salvar" class="btn btn-primario">
+                  Adicionar
+                </button>
+                <button type="button" id="btn-cancelar" class="btn btn-secundario" style="display: none;">
+                  Cancelar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SEÇÃO: HISTÓRICO -->
+      <!-- ============================================================ -->
+      <section id="historico" class="secao">
+        <div class="container">
+          <h1 class="secao-titulo">Histórico de Transações</h1>
+          <p class="secao-subtitulo">Veja e gerencie todos os seus lançamentos</p>
+
+          <!-- Filtros -->
+          <div class="filtros-container">
+            <div class="filtros-linha">
+              <!-- Pesquisa -->
+              <div class="campo-grupo filtro-pesquisa">
+                <label for="campo-pesquisa" class="campo-label">Pesquisar</label>
+                <input
+                  type="text"
+                  id="campo-pesquisa"
+                  class="campo-input"
+                  placeholder="Pesquisar pela descrição..."
+                />
+              </div>
+
+              <!-- Filtro Categoria -->
+              <div class="campo-grupo filtro-item">
+                <label for="filtro-categoria" class="campo-label">Categoria</label>
+                <select id="filtro-categoria" class="campo-input">
+                  <option value="todas">Todas as Categorias</option>
+                </select>
+              </div>
+
+              <!-- Filtro Tipo -->
+              <div class="campo-grupo filtro-item">
+                <label for="filtro-tipo" class="campo-label">Tipo</label>
+                <select id="filtro-tipo" class="campo-input">
+                  <option value="todos">Todos</option>
+                  <option value="receita">Receitas</option>
+                  <option value="despesa">Despesas</option>
+                </select>
+              </div>
+
+              <!-- Filtro Mês -->
+              <div class="campo-grupo filtro-item">
+                <label for="filtro-mes" class="campo-label">Mês</label>
+                <select id="filtro-mes" class="campo-input">
+                  <option value="todos">Todos os Meses</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tabela de Transações -->
+          <div class="tabela-container">
+            <table class="tabela" id="tabela-transacoes">
+              <thead>
+                <tr>
+                  <th>Data</th>
+                  <th>Descrição</th>
+                  <th>Categoria</th>
+                  <th>Tipo</th>
+                  <th>Valor</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="corpo-tabela">
+                <!-- As linhas são preenchidas pelo JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SEÇÃO: RESUMO -->
+      <!-- ============================================================ -->
+      <section id="resumo" class="secao">
+        <div class="container">
+          <h1 class="secao-titulo">Resumo Financeiro</h1>
+          <p class="secao-subtitulo">Análise detalhada das suas finanças</p>
+
+          <!-- Cards do Resumo -->
+          <div class="resumo-cards">
+            <div class="resumo-card resumo-card-receitas">
+              <h3 class="resumo-card-titulo">Total de Receitas</h3>
+              <p class="resumo-card-valor" id="resumo-receitas">R$ 0,00</p>
+            </div>
+            <div class="resumo-card resumo-card-despesas">
+              <h3 class="resumo-card-titulo">Total de Despesas</h3>
+              <p class="resumo-card-valor" id="resumo-despesas">R$ 0,00</p>
+            </div>
+            <div class="resumo-card resumo-card-saldo">
+              <h3 class="resumo-card-titulo">Saldo</h3>
+              <p class="resumo-card-valor" id="resumo-saldo">R$ 0,00</p>
+            </div>
+          </div>
+
+          <!-- Indicadores -->
+          <div class="resumo-indicadores">
+            <div class="indicador">
+              <span class="indicador-label">Total de Lançamentos</span>
+              <span class="indicador-valor" id="resumo-quantidade">0</span>
+            </div>
+            <div class="indicador">
+              <span class="indicador-label">% Gastos vs Receitas</span>
+              <span class="indicador-valor" id="resumo-porcentagem">0%</span>
+            </div>
+          </div>
+
+          <!-- Barra de Progresso -->
+          <div class="barra-progresso-container">
+            <h3 class="barra-titulo">Nível de Gastos</h3>
+            <div class="barra-progresso">
+              <div class="barra-preenchimento" id="barra-gastos"></div>
+            </div>
+            <div class="barra-legenda">
+              <span>0%</span>
+              <span>50%</span>
+              <span>100%</span>
+            </div>
+          </div>
+
+          <!-- Status Financeiro -->
+          <div id="status-financeiro" class="status-financeiro status-neutro">
+            ⚪ Registre suas transações para ver seu status.
+          </div>
+
+          <!-- Resumo por Categoria -->
+          <h2 class="subtitulo-secao">Resumo por Categoria</h2>
+          <div class="categorias-container" id="resumo-categorias">
+            <p class="texto-vazio">Nenhuma transação registrada.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SEÇÃO: SOBRE -->
+      <!-- ============================================================ -->
+      <section id="sobre" class="secao">
+        <div class="container">
+          <h1 class="secao-titulo">Sobre o MyFinance</h1>
+          <p class="secao-subtitulo">Conheça o projeto</p>
+
+          <div class="sobre-conteudo">
+            <div class="sobre-card">
+              <h2 class="sobre-titulo">📌 O Problema</h2>
+              <p class="sobre-texto">
+                Muitas pessoas não conseguem controlar suas finanças pessoais.
+                Gastam mais do que ganham e não sabem para onde o dinheiro está indo.
+                A falta de organização financeira é um problema real que afeta
+                milhões de brasileiros.
+              </p>
+            </div>
+
+            <div class="sobre-card">
+              <h2 class="sobre-titulo">💡 A Solução</h2>
+              <p class="sobre-texto">
+                O MyFinance é um sistema simples e intuitivo para controle de
+                finanças pessoais. Ele permite registrar receitas e despesas,
+                visualizar o saldo, filtrar transações e ter uma visão clara
+                da saúde financeira.
+              </p>
+            </div>
+
+            <div class="sobre-card">
+              <h2 class="sobre-titulo">🛠️ Tecnologias</h2>
+              <div class="tecnologias-lista">
+                <span class="tecnologia-badge">HTML5</span>
+                <span class="tecnologia-badge">CSS3</span>
+                <span class="tecnologia-badge">TypeScript</span>
+                <span class="tecnologia-badge">Vite</span>
+                <span class="tecnologia-badge">LocalStorage</span>
+                <span class="tecnologia-badge">Git</span>
+                <span class="tecnologia-badge">GitHub Pages</span>
+              </div>
+            </div>
+
+            <div class="sobre-card">
+              <h2 class="sobre-titulo">📚 Conceitos Utilizados</h2>
+              <ul class="sobre-lista">
+                <li>Programação Orientada a Objetos (Classes)</li>
+                <li>Funções e Modularização</li>
+                <li>Arrays e Métodos de Array (map, filter, reduce)</li>
+                <li>Estruturas Condicionais (if, else, switch)</li>
+                <li>Estruturas de Repetição (for, for...of)</li>
+                <li>Manipulação do DOM</li>
+                <li>Eventos</li>
+                <li>LocalStorage</li>
+                <li>Responsividade (Media Queries)</li>
+                <li>TypeScript (Tipagem)</li>
+              </ul>
+            </div>
+
+            <div class="sobre-card">
+              <h2 class="sobre-titulo">👤 Desenvolvedor</h2>
+              <p class="sobre-texto">
+                Projeto desenvolvido como trabalho acadêmico para as disciplinas
+                de Programação II e Construção de Sites.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ============================================================ -->
+    <!-- FOOTER -->
+    <!-- ============================================================ -->
+    <footer class="footer">
+      <div class="container">
+        <p class="footer-texto">
+          💰 MyFinance &copy; 2025 — Projeto Acadêmico
+        </p>
+      </div>
+    </footer>
+
+    <!-- Script principal -->
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
