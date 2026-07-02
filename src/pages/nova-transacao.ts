@@ -4,22 +4,16 @@ import { inicializarFormulario } from '../components/Formulario';
 
 inicializarPagina();
 
-const initNovaTransacao = () => {
+document.addEventListener('DOMContentLoaded', function() {
   const gerenciador = new GerenciadorFinanceiro();
-  inicializarFormulario(gerenciador, () => {});
+  inicializarFormulario(gerenciador, function() {});
 
   const form = document.getElementById('form-transacao');
-  if (form) {
-    form.addEventListener('submit', () => {
-      setTimeout(() => {
+  if (form !== null) {
+    form.addEventListener('submit', function() {
+      setTimeout(function() {
         window.location.href = 'historico.html';
       }, 1500);
     });
   }
-};
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initNovaTransacao);
-} else {
-  initNovaTransacao();
-}
+});

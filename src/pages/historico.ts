@@ -5,10 +5,10 @@ import { renderizarListaTransacoes } from '../components/ListaTransacoes';
 
 inicializarPagina();
 
-const initHistorico = () => {
+document.addEventListener('DOMContentLoaded', function() {
   const gerenciador = new GerenciadorFinanceiro();
 
-  const atualizarTela = () => {
+  function atualizarTela() {
     const filtros = obterValoresFiltros();
     const transacoesFiltradas = gerenciador.filtrarTransacoes(
       filtros.categoria,
@@ -17,14 +17,8 @@ const initHistorico = () => {
       filtros.termo
     );
     renderizarListaTransacoes(transacoesFiltradas, gerenciador, atualizarTela);
-  };
+  }
 
   inicializarFiltros(gerenciador, atualizarTela);
   atualizarTela();
-};
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initHistorico);
-} else {
-  initHistorico();
-}
+});

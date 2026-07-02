@@ -4,13 +4,7 @@ import { atualizarDashboard } from '../components/Dashboard';
 
 inicializarPagina();
 
-const initDashboard = () => {
+document.addEventListener('DOMContentLoaded', function() {
   const gerenciador = new GerenciadorFinanceiro();
   atualizarDashboard(gerenciador);
-};
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initDashboard);
-} else {
-  initDashboard();
-}
+});
