@@ -75,67 +75,48 @@ O projeto estará disponível em `http://localhost:5173`.
 
 ## 🌐 Como Publicar no GitHub Pages
 
-```bash
-# 1. Gere o build de produção
-npm run build
+O deploy deste projeto está **automatizado** com o **GitHub Actions**.
 
-# 2. Instale o gh-pages (se ainda não tiver)
-npm install -D gh-pages
-
-# 3. Adicione o script de deploy no package.json:
-# "deploy": "gh-pages -d dist"
-
-# 4. Publique
-npm run deploy
-```
-
-Ou manualmente:
-
-1. Faça o build com `npm run build`
-2. Suba a pasta `dist/` para um branch chamado `gh-pages`
-3. No GitHub, vá em **Settings > Pages** e selecione o branch `gh-pages`
+Basta fazer um "push" para a branch `main`. O GitHub Actions cuidará do build usando o Vite e publicará as 9 páginas automaticamente no GitHub Pages, garantindo que todo o CSS e JavaScript funcionem perfeitamente.
 
 ---
 
 ## 📁 Estrutura do Projeto
 
+O projeto utiliza a arquitetura de Múltiplas Páginas (MPA), sendo composto por 9 arquivos HTML principais.
+
 ```
-src/
-├── components/          # Componentes da interface
-│   ├── Navbar.ts        # Barra de navegação
-│   ├── Dashboard.ts     # Cards do dashboard
-│   ├── Formulario.ts    # Formulário de transações
-│   ├── ListaTransacoes.ts # Tabela de histórico
-│   ├── Filtros.ts       # Filtros e pesquisa
-│   └── Resumo.ts        # Resumo financeiro
-│
-├── models/              # Modelos de dados (POO)
-│   └── Transacao.ts     # Classe Transacao
-│
-├── services/            # Serviços (lógica de negócio)
-│   ├── GerenciadorFinanceiro.ts  # Gerenciador de transações
-│   └── StorageService.ts        # Funções do LocalStorage
-│
-├── utils/               # Utilitários
-│   ├── formatadores.ts  # Funções de formatação
-│   └── categorias.ts    # Arrays de categorias
-│
-├── styles/              # Estilos CSS
-│   └── main.css         # Estilo principal
-│
-├── main.ts              # Arquivo principal (ponto de entrada)
-└── vite-env.d.ts        # Declarações de tipo do Vite
+/
+├── index.html           # Dashboard (Visão Geral)
+├── nova-transacao.html  # Formulário de Cadastro
+├── historico.html       # Tabela de Transações
+├── resumo.html          # Análise Financeira
+├── sobre.html           # Sobre o Projeto
+├── categorias.html      # Gerenciamento de Categorias
+├── metas.html           # Metas Financeiras
+├── educacao.html        # Dicas de Educação Financeira
+├── contato.html         # Formulário de Contato
+├── .github/workflows/
+│   └── deploy.yml       # Script de Deploy Automático
+├── src/
+│   ├── pages/           # Scripts de inicialização de cada página
+│   ├── components/      # Componentes da interface e lógica de UI
+│   ├── models/          # Modelos de dados (POO)
+│   ├── services/        # Serviços (lógica de negócio e LocalStorage)
+│   ├── utils/           # Utilitários (formatação e categorias)
+│   └── styles/          # Estilos CSS principais (main.css)
 ```
 
 ### Explicação das pastas
 
 | Pasta | Descrição |
 |-------|-----------|
-| `components/` | Cada arquivo cuida de uma parte da tela (navbar, formulário, tabela, etc.) |
-| `models/` | Contém a classe `Transacao`, que define a estrutura dos dados |
-| `services/` | Contém a lógica principal: gerenciar transações e salvar no LocalStorage |
-| `utils/` | Funções auxiliares reutilizáveis (formatação, categorias) |
-| `styles/` | Arquivo CSS com todos os estilos |
+| `src/pages/` | Arquivos TypeScript específicos para inicializar cada uma das 9 páginas. |
+| `src/components/` | Cada arquivo cuida de uma parte lógica da tela (navbar, formulário, tabela). |
+| `src/models/` | Contém a classe `Transacao`, que define a estrutura dos dados. |
+| `src/services/` | Contém a lógica principal: gerenciar transações e salvar no LocalStorage. |
+| `src/utils/` | Funções auxiliares reutilizáveis (formatação, categorias). |
+| `src/styles/` | Arquivo CSS com todos os estilos, com paleta de cores aprimorada. |
 
 ---
 

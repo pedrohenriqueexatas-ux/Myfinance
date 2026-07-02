@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="MyFinance - Sobre o Projeto" />
+    <title>Sobre - MyFinance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/styles/main.css" />
+  </head>
+  <body>
+    <nav class="navbar" id="navbar">
+      <div class="navbar-container">
+        <a href="index.html" class="navbar-logo">
+          <span class="logo-icone">💰</span>
+          <span class="logo-texto">MyFinance</span>
+        </a>
+        <button class="botao-menu" id="botao-menu" aria-label="Menu">
+          <span class="hamburger-linha"></span>
+          <span class="hamburger-linha"></span>
+          <span class="hamburger-linha"></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html" class="nav-link">📊 Dashboard</a></li>
+          <li><a href="nova-transacao.html" class="nav-link">➕ Nova Transação</a></li>
+          <li><a href="historico.html" class="nav-link">📋 Histórico</a></li>
+          <li><a href="resumo.html" class="nav-link">📈 Resumo</a></li>
+          <li><a href="categorias.html" class="nav-link">🏷️ Categorias</a></li>
+          <li><a href="metas.html" class="nav-link">🎯 Metas</a></li>
+          <li><a href="educacao.html" class="nav-link">📚 Educação</a></li>
+          <li><a href="contato.html" class="nav-link">✉️ Contato</a></li>
+          <li><a href="sobre.html" class="nav-link">ℹ️ Sobre</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="conteudo-principal">
+      <section id="sobre" class="secao secao-ativa">
+        <div class="container">
+          <h1 class="secao-titulo">Sobre o MyFinance</h1>
+          <p class="secao-subtitulo">Conheça o projeto</p>
+
+          <div class="sobre-conteudo">
+            <div class="sobre-card">
+              <h2 class="sobre-titulo">📌 O Problema</h2>
+              <p class="sobre-texto">
+                Muitas pessoas não conseguem controlar suas finanças pessoais. Gastam mais do que ganham e não sabem para onde o dinheiro está indo. A falta de organização financeira é um problema real que afeta milhões de brasileiros.
+              </p>
+            </div>
+            <div class="sobre-card">
+              <h2 class="sobre-titulo">💡 A Solução</h2>
+              <p class="sobre-texto">
+                O MyFinance é um sistema simples e intuitivo para controle de finanças pessoais. Ele permite registrar receitas e despesas, visualizar o saldo, filtrar transações e ter uma visão clara da saúde financeira.
+              </p>
+            </div>
+            <div class="sobre-card">
+              <h2 class="sobre-titulo">🛠️ Tecnologias</h2>
+              <div class="tecnologias-lista">
+                <span class="tecnologia-badge">HTML5</span>
+                <span class="tecnologia-badge">CSS3</span>
+                <span class="tecnologia-badge">TypeScript</span>
+                <span class="tecnologia-badge">Vite</span>
+                <span class="tecnologia-badge">LocalStorage</span>
+                <span class="tecnologia-badge">Git</span>
+                <span class="tecnologia-badge">GitHub Pages</span>
+              </div>
+            </div>
+            <div class="sobre-card">
+              <h2 class="sobre-titulo">📚 Conceitos Utilizados</h2>
+              <ul class="sobre-lista">
+                <li>Programação Orientada a Objetos (Classes)</li>
+                <li>Funções e Modularização</li>
+                <li>Arrays e Métodos de Array (map, filter, reduce)</li>
+                <li>Estruturas Condicionais (if, else, switch)</li>
+                <li>Estruturas de Repetição (for, for...of)</li>
+                <li>Manipulação do DOM e Eventos</li>
+                <li>LocalStorage</li>
+                <li>Responsividade (Media Queries)</li>
+                <li>TypeScript (Tipagem)</li>
+              </ul>
+            </div>
+            <div class="sobre-card">
+              <h2 class="sobre-titulo">👤 Desenvolvedor</h2>
+              <p class="sobre-texto">
+                Projeto desenvolvido como trabalho acadêmico para as disciplinas de Programação II e Construção de Sites. O sistema utiliza arquitetura de Múltiplas Páginas (MPA) para aplicar conceitos sólidos de interligação HTML.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="footer-texto">💰 MyFinance &copy; 2026 — Projeto Acadêmico</p>
+      </div>
+    </footer>
+
+    <script type="module" src="./src/pages/sobre.ts"></script>
+  </body>
+</html>

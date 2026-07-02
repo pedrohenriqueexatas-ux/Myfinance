@@ -3,16 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="MyFinance - Dashboard e Visão Geral das Finanças" />
-    <title>MyFinance - Dashboard</title>
+    <meta name="description" content="MyFinance - Educação Financeira" />
+    <title>Educação Financeira - MyFinance</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <!-- Referenciando CSS diretamente para funcionar no GitHub Pages perfeitamente -->
     <link rel="stylesheet" href="./src/styles/main.css" />
   </head>
   <body>
-    <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
       <div class="navbar-container">
         <a href="index.html" class="navbar-logo">
@@ -38,61 +36,49 @@
       </div>
     </nav>
 
-    <!-- CONTEÚDO PRINCIPAL -->
     <main class="conteudo-principal">
-      <section id="dashboard" class="secao secao-ativa">
+      <section id="educacao" class="secao secao-ativa">
         <div class="container">
-          <h1 class="secao-titulo">Dashboard</h1>
-          <p class="secao-subtitulo">Visão geral das suas finanças</p>
+          <h1 class="secao-titulo">Educação Financeira</h1>
+          <p class="secao-subtitulo">Dicas para melhorar sua saúde financeira</p>
 
-          <div class="cards-container">
-            <div class="card card-saldo" id="card-saldo">
-              <div class="card-icone">💵</div>
-              <div class="card-info">
-                <h3 class="card-titulo">Saldo Atual</h3>
-                <p class="card-valor" id="valor-saldo">R$ 0,00</p>
-              </div>
+          <div class="sobre-conteudo">
+            <div class="sobre-card">
+              <h2 class="sobre-titulo">💡 Regra 50/30/20</h2>
+              <p class="sobre-texto">
+                Uma das regras mais famosas para organizar o orçamento:
+              </p>
+              <ul class="sobre-lista" style="margin-top: 10px;">
+                <li><strong>50%</strong> para Necessidades (aluguel, contas, mercado)</li>
+                <li><strong>30%</strong> para Desejos (lazer, compras, restaurantes)</li>
+                <li><strong>20%</strong> para Poupança e Investimentos (reserva de emergência)</li>
+              </ul>
             </div>
-            <div class="card card-receitas">
-              <div class="card-icone">📈</div>
-              <div class="card-info">
-                <h3 class="card-titulo">Total Receitas</h3>
-                <p class="card-valor" id="valor-receitas">R$ 0,00</p>
-              </div>
+            
+            <div class="sobre-card">
+              <h2 class="sobre-titulo">🛡️ Reserva de Emergência</h2>
+              <p class="sobre-texto">
+                Antes de começar a investir em ativos de risco, é fundamental construir uma reserva de emergência. O ideal é ter guardado o equivalente a <strong>6 meses do seu custo de vida</strong> em investimentos de alta liquidez (como Tesouro Selic ou CDBs com liquidez diária).
+              </p>
             </div>
-            <div class="card card-despesas">
-              <div class="card-icone">📉</div>
-              <div class="card-info">
-                <h3 class="card-titulo">Total Despesas</h3>
-                <p class="card-valor" id="valor-despesas">R$ 0,00</p>
-              </div>
+            
+            <div class="sobre-card">
+              <h2 class="sobre-titulo">💳 Cuidado com o Cartão de Crédito</h2>
+              <p class="sobre-texto">
+                O cartão de crédito não é uma extensão do seu salário. Use-o com sabedoria, pague sempre a fatura total até o vencimento e evite parcelamentos muito longos que comprometem sua renda futura.
+              </p>
             </div>
-            <div class="card card-quantidade">
-              <div class="card-icone">📝</div>
-              <div class="card-info">
-                <h3 class="card-titulo">Lançamentos</h3>
-                <p class="card-valor" id="valor-quantidade">0</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="acao-rapida">
-            <a href="nova-transacao.html" class="btn btn-primario btn-grande">
-              ➕ Adicionar Transação
-            </a>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- FOOTER -->
     <footer class="footer">
       <div class="container">
         <p class="footer-texto">💰 MyFinance &copy; 2026 — Projeto Acadêmico</p>
       </div>
     </footer>
 
-    <!-- Script específico da página -->
-    <script type="module" src="./src/pages/dashboard.ts"></script>
+    <script type="module" src="./src/pages/educacao.ts"></script>
   </body>
 </html>

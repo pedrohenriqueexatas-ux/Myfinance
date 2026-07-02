@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="MyFinance - Resumo Financeiro" />
+    <title>Resumo - MyFinance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/styles/main.css" />
+  </head>
+  <body>
+    <nav class="navbar" id="navbar">
+      <div class="navbar-container">
+        <a href="index.html" class="navbar-logo">
+          <span class="logo-icone">💰</span>
+          <span class="logo-texto">MyFinance</span>
+        </a>
+        <button class="botao-menu" id="botao-menu" aria-label="Menu">
+          <span class="hamburger-linha"></span>
+          <span class="hamburger-linha"></span>
+          <span class="hamburger-linha"></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html" class="nav-link">📊 Dashboard</a></li>
+          <li><a href="nova-transacao.html" class="nav-link">➕ Nova Transação</a></li>
+          <li><a href="historico.html" class="nav-link">📋 Histórico</a></li>
+          <li><a href="resumo.html" class="nav-link">📈 Resumo</a></li>
+          <li><a href="categorias.html" class="nav-link">🏷️ Categorias</a></li>
+          <li><a href="metas.html" class="nav-link">🎯 Metas</a></li>
+          <li><a href="educacao.html" class="nav-link">📚 Educação</a></li>
+          <li><a href="contato.html" class="nav-link">✉️ Contato</a></li>
+          <li><a href="sobre.html" class="nav-link">ℹ️ Sobre</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="conteudo-principal">
+      <section id="resumo" class="secao secao-ativa">
+        <div class="container">
+          <h1 class="secao-titulo">Resumo Financeiro</h1>
+          <p class="secao-subtitulo">Análise detalhada das suas finanças</p>
+
+          <div class="resumo-cards">
+            <div class="resumo-card resumo-card-receitas">
+              <h3 class="resumo-card-titulo">Total de Receitas</h3>
+              <p class="resumo-card-valor" id="resumo-receitas">R$ 0,00</p>
+            </div>
+            <div class="resumo-card resumo-card-despesas">
+              <h3 class="resumo-card-titulo">Total de Despesas</h3>
+              <p class="resumo-card-valor" id="resumo-despesas">R$ 0,00</p>
+            </div>
+            <div class="resumo-card resumo-card-saldo">
+              <h3 class="resumo-card-titulo">Saldo</h3>
+              <p class="resumo-card-valor" id="resumo-saldo">R$ 0,00</p>
+            </div>
+          </div>
+
+          <div class="resumo-indicadores">
+            <div class="indicador">
+              <span class="indicador-label">Total de Lançamentos</span>
+              <span class="indicador-valor" id="resumo-quantidade">0</span>
+            </div>
+            <div class="indicador">
+              <span class="indicador-label">% Gastos vs Receitas</span>
+              <span class="indicador-valor" id="resumo-porcentagem">0%</span>
+            </div>
+          </div>
+
+          <div class="barra-progresso-container">
+            <h3 class="barra-titulo">Nível de Gastos</h3>
+            <div class="barra-progresso">
+              <div class="barra-preenchimento" id="barra-gastos"></div>
+            </div>
+            <div class="barra-legenda">
+              <span>0%</span>
+              <span>50%</span>
+              <span>100%</span>
+            </div>
+          </div>
+
+          <div id="status-financeiro" class="status-financeiro status-neutro">
+            ⚪ Registre suas transações para ver seu status.
+          </div>
+
+          <h2 class="subtitulo-secao">Resumo por Categoria</h2>
+          <div class="categorias-container" id="resumo-categorias">
+            <p class="texto-vazio">Nenhuma transação registrada.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="footer-texto">💰 MyFinance &copy; 2026 — Projeto Acadêmico</p>
+      </div>
+    </footer>
+
+    <script type="module" src="./src/pages/resumo.ts"></script>
+  </body>
+</html>
